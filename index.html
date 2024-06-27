@@ -12,8 +12,12 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
             color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         .container {
@@ -23,6 +27,12 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             border-radius: 10px;
             overflow: hidden;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         .header {
@@ -31,6 +41,12 @@
             text-align: center;
             padding: 30px 0;
             border-bottom: 2px solid #004085;
+            animation: slideInFromLeft 1s ease-in-out;
+        }
+
+        @keyframes slideInFromLeft {
+            0% { opacity: 0; transform: translateX(-100%); }
+            100% { opacity: 1; transform: translateX(0); }
         }
 
         .header h1 {
@@ -48,6 +64,7 @@
             margin-bottom: 40px;
             padding: 20px;
             border-bottom: 1px solid #eaeaea;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .section:last-child {
@@ -78,6 +95,7 @@
             position: relative;
             color: #6c757d;
             font-size: 1.1em;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .features-list li::before {
@@ -86,6 +104,11 @@
             left: 0;
             color: #28A745;
             font-size: 1.2em;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         .button {
@@ -105,10 +128,17 @@
             margin: 0 auto;
             display: block;
             width: 50%;
+            animation: pulse 1.5s infinite;
         }
 
         .button:hover {
             background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         @media (max-width: 768px) {
